@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+  pool: 5
+  timeout: 5000
+  username: kvarma
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: toblerone_development
+
+test:
+  <<: *default
+  database: toblerone_test
+
+staging:
+  <<: *default
+  database: toblerone_staging
+
+production:
+  <<: *default
+  database: production_staging
