@@ -12,7 +12,7 @@ development:
   <<: *default
   database: toblerone_development
 
-test:
+test: &test
   <<: *default
   database: toblerone_test
 
@@ -22,4 +22,7 @@ staging:
 
 production:
   <<: *default
-  database: production_staging
+  database: toblerone_production
+
+cucumber:
+  <<: *test

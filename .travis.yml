@@ -1,0 +1,24 @@
+language: ruby
+cache: bundler
+bundler_args: --without development --path=~/.bundle
+rvm:
+- 2.0.0
+gemfile:
+- Gemfile
+env:
+  global:
+  - RAILS_ENV="test"
+  matrix:
+  - RAILSENV=test RAKETEST=spec
+  - RAILSENV=test RAKETEST=cucumber
+script:
+- RAILS_ENV=$RAILSENV bundle exec rake $RAKETEST
+before_install:
+- "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+before_script:
+- "cp config/database.travis.yml config/database.yml"
+- "psql -c 'create database toblerone_travis_test' -U postgres"
+- "bundle exec rake db:schema:load"
+addons:
+  code_climate:
+    repo_token: 200334d6a365237c668494edcce84b4a4407dac6c109450154c3a3feb5452a4f
