@@ -1,0 +1,5 @@
+test:
+  adapter: postgresql
+  database: toblerone_travis_test
+  username: postgres
+  password:

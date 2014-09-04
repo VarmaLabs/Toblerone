@@ -4,17 +4,18 @@ default: &default
   reconnect: false
   pool: 5
   timeout: 5000
-  username: kvarma
   host: localhost
   port: 5432
 
 development:
   <<: *default
   database: toblerone_development
+  username: kvarma
 
 test: &test
   <<: *default
   database: toblerone_test
+  username: kvarma
 
 staging:
   <<: *default
