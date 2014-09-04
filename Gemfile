@@ -67,7 +67,7 @@ group :test do
 
   # For Cucumber
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner', git: 'git@github.com:bmabey/database_cleaner.git'
+  gem 'database_cleaner'
   #gem 'email_spec'
   #gem 'cucumber-websteps'
   #gem 'pickle'
