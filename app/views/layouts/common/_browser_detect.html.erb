@@ -1,0 +1,50 @@
+<div id="div_browser_detect" class="browser-text" style="display:none;margin-bottom: 10px;"></div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    // -------- Detecting IE Browsers
+    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){ //test for MSIE x.x;
+      var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+      if (ieversion>=9){
+      }
+      else if (ieversion>=8){
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").attr("style","margin:0px auto 10px auto;width: 954px;display:block" );
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").html("You're using IE8. Azzist.com works well with Chrome 11.0, Firefox 3.0, Safari 5.0.5, IE 9 and Opera 9.0 & 11.51");
+      }
+      else if (ieversion>=7){
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").attr("style","margin:0px auto 10px auto;width: 954px;display:block" );
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").html("You're using IE7.x.Azzist.com works well with Chrome 11.0, Firefox 3.0, Safari 5.0.5, IE 9 and Opera 9.0 & 11.51");
+      }
+      else if (ieversion>=6){
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").attr("style","margin:0px auto 10px auto;width: 954px;display:block" );
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").html("You're using IE6.x. Azzist.com works well with Chrome 11.0, Firefox 3.0, Safari 5.0.5, IE 9 and Opera 9.0 & 11.51");
+      }
+      else if (ieversion>=5){
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").attr("style","margin:0px auto 10px auto;width: 954px;display:block" );
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").html("You're using IE5.x. Azzist.com works well with Chrome 11.0, Firefox 3.0, Safari 5.0.5, IE 9 and Opera 9.0 & 11.51");
+      }
+    }
+
+    else if (/Opera[\/\s](\d+\.\d+)/.test(navigator.userAgent)){ //test for Opera/x.x or Opera x.x (ignoring remaining decimal places);
+      var oprversion=new Number(RegExp.$1); // capture x.x portion and store as a number
+      if (oprversion<=9){
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").attr("style","margin:0px auto 10px auto;width: 954px;display:block" );
+        jQuery("#DIV_INCOMPATIBLE_BROWSER_NOTIFICATION").html("You're using Opera 9.0 or greater. Azzist.com works well with Chrome 11.0, Firefox 3.0, Safari 5.0.5, IE 9 and Opera 9.0 & 11.51");
+      }
+    }
+
+  });
+</script>
+
+<style type="text/css">
+  .browser-text {
+    padding:10px;color:#fff;
+    background-image: -moz-linear-gradient(top, #620000, #b10000);
+    background-image: -webkit-linear-gradient(top, #620000, #b10000);
+    background-image: -o-linear-gradient(top, #620000, #b10000);
+    background-color: #890000;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+</style>

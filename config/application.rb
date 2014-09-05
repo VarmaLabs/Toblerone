@@ -8,6 +8,15 @@ Bundler.require(*Rails.groups)
 
 module Toblerone
   class Application < Rails::Application
+
+    config.middleware.use ActionDispatch::Flash
+    config.api_only = false
+
+    config.after_initialize do
+      dirs = [File.join(config.root, "lib", "core_ext", "**", "*.rb")]
+      Dir[*dirs].each {|file| require file }
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

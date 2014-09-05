@@ -1,3 +1,9 @@
+PATH
+  remote: /Users/kvarma/Projects/VarmaLabs/OpenSource/humdrum
+  specs:
+    humdrum-rails (0.1.0)
+      colorize (~> 0.7, >= 0.7.3)
+
 GIT
   remote: git://github.com/capistrano/rbenv.git
   revision: 2332dba20ec1f8c8cb7a9cd38770d71f5c4bf5a9
@@ -285,6 +291,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   hirb
+  humdrum-rails!
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

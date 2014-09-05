@@ -34,6 +34,9 @@ gem 'ruby-progressbar'
 # Helps to print colored texts to console
 gem "colorize"
 
+#gem 'humdrum-rails', '0.1.1'
+gem 'humdrum-rails', :path => '/Users/kvarma/Projects/VarmaLabs/OpenSource/humdrum'
+
 group :development do
   # For Deployment
   gem 'capistrano'
